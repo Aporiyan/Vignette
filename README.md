@@ -12,7 +12,7 @@ https://raw.githubusercontent.com/Aporiyan/Vignette/main/pluginmaster.json
 
 保存后在插件安装器搜索 **Vignette** 并安装。需要 Windows x64、Dalamud API 15 和 .NET 10。
 
-当前版本：**0.2.3**。插件包含独立播放器和内容核心，无需安卓模拟器。
+当前版本：**0.2.4**。插件包含独立播放器和内容核心，无需安卓模拟器。
 
 ## 使用
 
@@ -21,6 +21,8 @@ https://raw.githubusercontent.com/Aporiyan/Vignette/main/pluginmaster.json
 - `/vignette hide`：隐藏小手机。
 
 支持横竖屏切换、窗口缩放、选集、播放进度、观看记录和账号页。播放可用性与画质取决于内容服务。
+
+视频默认按每集实际画面比例适配。播放页的“本剧画面设置”支持自定义显示宽高、旋转以及完整显示/填满窗口；各剧独立保存，也可单独重置。自定义宽高调整显示比例，不会提高片源清晰度。
 
 视频缓存默认位于 Dalamud 配置目录的 `Vignette/content/media-cache`，与安装目录分离。设置中可修改缓存目录、选择容量目标或清空缓存。默认清理目标为 256 MB；当前播放或下载中的视频可能暂时超过目标。账号和观看记录保留在配置目录。
 
