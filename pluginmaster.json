@@ -3,7 +3,7 @@
     "Author": "Luno",
     "Name": "Vignette",
     "InternalName": "Vignette",
-    "AssemblyVersion": "0.2.4.0",
+    "AssemblyVersion": "0.2.5.0",
     "Punchline": "Vignette · 口袋里的短剧。",
     "Description": "游戏内的轻量短剧手机。使用本机内容核心搜索、选集和观看。",
     "ApplicableVersion": "any",
@@ -14,14 +14,14 @@
     ],
     "RepoUrl": "https://github.com/Aporiyan/Vignette",
     "IconUrl": "https://raw.githubusercontent.com/Aporiyan/Vignette/main/images/icon.png",
-    "DownloadLinkInstall": "https://raw.githubusercontent.com/Aporiyan/Vignette/v0.2.4/Vignette.zip",
-    "DownloadLinkUpdate": "https://raw.githubusercontent.com/Aporiyan/Vignette/v0.2.4/Vignette.zip",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/Aporiyan/Vignette/v0.2.5/Vignette.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/Aporiyan/Vignette/v0.2.5/Vignette.zip",
     "DownloadLinkTesting": "",
     "LoadRequiredState": 0,
     "LoadSync": false,
     "CanUnloadAsync": false,
     "LoadPriority": 0,
     "AcceptsFeedback": true,
-    "LastUpdate": 1793607424
+    "LastUpdate": 1793637118
   }
 ]
