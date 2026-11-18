@@ -14,6 +14,7 @@
 - 0.2.3 增加 `patches/cache-management.patch`：Windows 文件租约、可配置容量、后台清理及播放读取保护；修改媒体缓存检查并补充容量边界验证。补丁依次应用在会话恢复及画面比例补丁之后。
 - 0.2.5 增加 `patches/playback-recovery.patch`，在前三个补丁之后应用，包含结构化空响应诊断、有限退避、冷却等待、Range 到完整文件回退的模型复用、播放签名和独立匿名播放注册配置。
 - 播放签名/备用主机的实现参考 `aston314/hongguo-tv` 于 2026-11-02 的快照 `2119b837d566066e1db93435fcc6c722393958fa`，归档位于 `../插件/build/upstream-20261102.zip`，SHA-256 为 `0e8d06f5a965f2e3eae78a3de9745654da4e69bbb5bc846b9aec584cf780b313`；未整体替换研究核心。
+- 0.2.6 的 `patches/mobile-v5.patch` 参考该项目 2026-11-18 main 归档，只移植播放 v5 签名、请求格式、媒体地址解码及编码兼容部分，保留 Vignette 的比例修复、缓存和账号协议。归档 `../插件/build/upstream-20261118/source.zip`，SHA-256 `96b99ee911ec3c1fa901b77c4ac1b888467dfceaee338c46a6d7ba894a5e5cc7`。`playback_v5_*.go` 保留 GPL-3.0-only 及上游来源标识，算法来源 `N3urda/hongguoTV` 提交 `18c37c2`，经 `woshishiq1/drpys` 的 `22261ad`。随补丁附带合成身份的摘要、载体及完整签名测试向量，不包含用户登录数据。
 - `minireel_device.go`、`minireel_f13.go` 的配置及播放 F13 分支 0 移植自 `jackotom/hongguo-drama` 的 `v5.4`，`src/native/playback-device.js` 与 `src/native/app-source.js`，保留 GPL-3.0-only 标识。算法来源记录为 `woshishiq1/drpys` 提交 `22261adfa31435e3b3ef5a730b8a2a75bcaf1715`、经 `N3urda/hongguoTV` 提交 `eea73e6a45569a2cbbb9440f7cd5290c459b0b70`；注册配置来源记录为 `tsukiyo-zero/hongguoTV` 提交 `388931852ddc614db8b00775a3dc54c5ede6307f`。本机六组 F13 向量及完整播放签名包的摘要与参考实现交叉校验，未引入 Node.js 或外部签名服务到插件运行包。
 - 在快照顶层没有找到项目级 LICENSE；子目录的许可文件不等于整个项目的许可。
 - 因此目前只作本机开发验证，不将包含此核心的目录视为可以公开分发的正式发布包。正式复用/分发须先明确授权与各依赖条件。
@@ -48,7 +49,7 @@
 
 ## 开发工具
 
-- .NET SDK 10.0.302：使用本机环境。
+- .NET SDK 10.0.404：重装后下载官方 ZIP 并核对官方 SHA-512，放在 `../插件/tools/dotnet`；仅用于编译和测试，不打入插件。
 - Go 1.27.3 Windows amd64：用于编译研究核心。
 - Go 归档 SHA-256：`f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885fff`，下载后已校验。
 - 工具、缓存和测试会话位于“插件”内的工具/构建/检查目录，不属于发布内容。
