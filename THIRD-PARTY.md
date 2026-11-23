@@ -25,6 +25,13 @@
 - 账号资料由核心存放在指定本机数据目录。其当前会话文件采用 JSON 存储，尚未增加 Windows DPAPI 加密；不要分享该目录。
 - 首版没有增加下载导出、金币任务、广告屏蔽或其他站源。
 
+## 0.2.11 SDK 播放适配与摘要引擎
+
+- SDK 工作流与协议实现参考 `jackotom/hongguo-drama v8.1`，下载归档 `../插件/build/reference-8.1/source.zip`，SHA-256 `cc75fc2289f080082d0ae8a7ea6594f3332619e054040d5361272590cfdbacd0`。来源为 `scripts/sdk-playback/vendor/phone_account/phone_sdk_*.py`、`phone_playback_*_v5.py` 与匿名注册。该参考项目列出的对应来源为 `waligoraamodio288-rgb/hongguo-desktop-releases v1.0.104`；保持 GPL-3.0-only 归属。运行包使用自有 Go 适配，不分发 Python 参考环境。
+- Unicorn 2.1.4：https://github.com/unicorn-engine/unicorn 。Windows x64 DLL 由独立内容核心首次下载固定 PyPI wheel 并提取，wheel SHA-256 `d7107500c64ce5c168fbff6bef9485b5db1350050036f4cea568650cf8bdbdf5`，DLL SHA-256 `010d85dce84b8f6ffaec3d5420f1b5f7768f859eb831be574c7da23e656ee8f1`。使用清华镜像与官方文件服务，两个地址只接受同一完整文件摘要；不安装 Python。该引擎按 GPL-2.0 使用。
+- 摘要素材由参考实现固定的官方 APK 分段下载，只保存 4,501,136 字节原始 SDK 镜像和 304 字节配置；分段与解压后文件均校验固定大小和 SHA-256。插件 ZIP 不包含 APK、SDK 素材、引擎缓存、匿名会话或账号数据。素材不是 Vignette 自有代码。
+- Go 适配提供虚拟内存、导入回调和有界执行，SDK 不访问主机文件、账号或网络；网络注册/会话由独立 Go 代码处理。引擎只在 Windows x64 的内容核心进程内加载。其它平台仍使用既有参考 7.7 路径。
+
 ## LibVLCSharp 3.10.2
 
 - 项目：https://code.videolan.org/videolan/LibVLCSharp
